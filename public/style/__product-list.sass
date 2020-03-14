@@ -1,0 +1,148 @@
+.left-menu
+  float: left
+  margin-top: 59px
+  padding-left: calc(50% - 570px)
+  &__summary::-webkit-details-marker
+    display: none
+  &__summary::after
+    content: '\25BC'
+    color: #838383
+  &__details[open] > summary::after
+    content: '\23CF'
+    color: $main-color
+  &__summary
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 243px
+    height: 37px
+    border-bottom: 2px solid whitesmoke
+    border-left: 5px solid $main-color
+    font-size: 1rem
+    font-weight: bold
+    line-height: 1.43
+    color: #6f6e6e
+    text-transform: uppercase
+    padding-left: 11px
+    padding-right: 5px
+    margin-top: 18px
+  &__ul
+    list-style: none
+    margin-left: 10px
+  &__li
+    font-size: 1rem
+    line-height: 2.36
+    color: #6f6e6e
+.parameters
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  margin-top: 71px
+  padding-left: 50px
+  padding-right: calc(50% - 570px)
+  &__block
+    width: 240px
+  &__trending
+    display: grid
+    grid-template-columns: 60px 25px 50px 25px 60px
+    width: 176px
+    margin-top: 25px
+  &__h
+    font-size: 1rem
+    font-weight: bold
+    line-height: 1.43
+    color: #6f6e6e
+    text-transform: uppercase
+  &__link
+    font-size: 1rem
+    text-align: center
+    margin-bottom: 5px
+    text-transform: capitalize
+  &__fieldset
+    border: none
+  &__label
+    font-size: 1rem
+    line-height: 1.43
+    color: #6f6e6e
+    text-transform: uppercase
+    margin-right: 31px
+  &__size
+    margin-top: 25px
+  &__price
+    margin-top: 25px
+  &__price-range
+    width: 262px
+.wall
+  text-align: center
+.sort
+  margin-top: 41px
+  padding-left: 50px
+  display: flex
+  &__block
+    display: flex
+    align-items: center
+    background-color: #f3f3f3
+    width: 846px
+    height: 50px
+    padding: 10px
+  &__text
+    background-color: white
+    text-align: center
+    font-size: 1rem
+    line-height: 1.86
+    color: #6f6e6e
+    +flex-line()
+    text-transform: capitalize
+    height: 33px
+    padding: 0 10px
+    margin-left: 10px
+    border: solid 1px #ebebeb
+  &__select
+    @extend .sort__text
+    margin-left: 0
+    height: 35px
+.product-list
+  margin-top: 48px
+  margin-left: 697px
+  margin-right: calc(50% - 608px)
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  grid-gap: 20px
+.product-pagination
+  margin-left: 697px
+  margin-right: calc(50% - 608px)
+  display: flex
+  justify-content: space-between
+  margin-top: 43px
+  &__block
+    border: 1px solid #ebebebeb
+    border-radius: 3px
+    padding: 6px 19px
+    display: flex
+    align-items: center
+  &__link
+    color: #c4c4c4
+    line-height: 1.63
+    font-size: 16px
+    font-weight: 300
+    padding: 5px
+  &__button
+    border: 1px solid $main-color
+    border-radius: 3px
+    color: $main-color
+    font-size: 16px
+    font-weight: 300
+    line-height: 1.63
+    +flex-line()
+    padding: 16px 45px
+.banefits_product-page
+  display: flex
+  flex-direction: column
+  align-items: center
+  text-align: center
+.benefits__text_product-page
+  padding-left: 0
+.baner_product-list
+  grid-template-rows: none
+  background-color: #222224
+.lure_product-list
+  margin-top: 0

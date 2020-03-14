@@ -1,0 +1,116 @@
+.slider
+  height: 777px
+  border: solid 1px #eaeaea
+  background-color: #f7f7f7
+  +flex-between()
+  &__button
+    width: 47px
+    height: 47px
+    font-size: 2rem
+    +flex-line()
+  &__herf
+    color: white
+  &__images
+    width: 597px
+    height: 724px
+.single-description
+  width: 1141px
+  height: 730px
+  border: solid 1px black
+  background-color: #ffffff
+  margin-left: 20%
+  margin-right: 20%
+  display: flex
+  flex-direction: column
+  align-items: center
+  &__h
+    color: $main-color
+    font-size: 1rem
+    font-weight: bold
+    text-transform: uppercase
+    margin-top: 73px
+    padding-bottom: 14px
+    border-bottom: 1px solid $main-color
+  &__slogan
+    font-size: 18px
+    font-weight: 900
+    line-height: 1.33
+    margin-top: 18px
+    color: #4d4d4d
+  &__description
+    font-size: 1rem
+    font-weight: 300
+    line-height: 1.71
+    width: 618px
+    text-align: center
+    margin-top: 67px
+  &__composition
+    font-size: 1rem
+    font-weight: bold
+    color: #b9b9b9b9
+    text-transform: uppercase
+    margin-top: 28px
+    display: flex
+    &_designer
+      margin-left: 44px
+    &_span
+      color: #2f2f2f
+  &__price
+    color: $main-color
+    font-size: 2rem
+    font-weight: bold
+    line-height: 1
+    margin-top: 37px
+    padding-bottom: 43px
+    width: 642px
+    border-bottom: 1px solid grey
+    text-align: center
+  &__form
+    margin-top: 63px
+    +flex-line()
+  &__label
+    display: flex
+    flex-direction: column
+    align-items: center
+  &__color
+    width: 144px
+    height: 33px
+    border: 1px solid #eaeaea
+    background-color: white
+    color: #bcbcbc
+    font-size: 13px
+    margin-top: 16px
+    margin-left: 35px
+  &__size
+    @extend .single-description__color
+    padding: 0 8px
+    height: 35px
+    margin-left: 53px
+  &__quantity
+    @extend .single-description__color
+    text-align: center
+    height: 33px
+    margin-left: 53px
+  &__button
+    width: 537px
+    height: 55px
+    border: 1px solid $main-color
+    color: $main-color
+    font-size: 16px
+    font-weight: bold
+    +flex-line()
+    margin-top: 28px
+.similar-product
+  margin-top: 119px
+  &__h
+    font-size: 2rem
+    font-weight: 900
+    line-height: 0.83
+    color: #575757
+    text-transform: uppercase
+    margin-bottom: 71px
+    text-align: center
+  &__box
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    grid-gap: 31px

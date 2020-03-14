@@ -1,0 +1,140 @@
+@import "var"
+@import "mixin"
+.grid
+  display: grid
+  grid-template-columns: 359px repeat(5, 156px)
+  &__h
+    font-weight: bold
+    font-size: 13px
+    text-transform: uppercase
+.grid-carList
+  @extend .grid
+.grid-name
+  border-bottom: 1px solid #eaeaea
+  padding-bottom: 20px
+  margin-top: 90px
+.grid-product
+  margin-top: 35px
+  padding-bottom: 25px
+  border-bottom: 1px solid #eaeaea
+  display: flex
+  &__h
+    font-size: 13px
+    text-transform: uppercase
+    margin-top: 11px
+    margin-left: 21px
+  &__description
+    font-size: 13px
+    line-height: 1.54
+    color: #575757
+    text-transform: capitalize
+  &__color
+    font-weight: 300
+    color: #6f6e6e
+    text-transform: capitalize
+    margin-left: 5px
+  &__size
+    @extend .grid-product__color
+    text-transform: uppercase
+  &__price
+    font-size: 13px
+    line-height: 1.54
+    color: #656565
+    text-transform: uppercase
+  &__quantity
+    align-items: center
+    text-align: center
+    padding: 10px 8px 10px 23px
+    border: 1px solid #eaeaea
+    font-size: 13px
+    line-height: 1.54
+    color: #656565
+  &__shipping
+    @extend .grid-product__price
+  &__subtotal
+    @extend .grid-product__price
+  &__action
+    font-size: 16px
+    & > a
+      color: #c0c0c0c0
+.cart-button-box
+  display: flex
+  justify-content: space-between
+  margin-top: 40px
+.cart-button
+  padding: 20px 38px
+  text-transform: uppercase
+  border: 1px solid #eaeaea
+  color: #4a4a4a
+  font-size: 1rem
+  font-weight: bold
+.checkout-section
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  grid-gap: 36px
+  &__input
+    font-size: 13px
+    font-weight: 300
+    color: #b1b1b1
+    text-transform: capitalize
+    padding: 16px 10px
+    margin-top: 22px
+  &__submit
+    background-color: white
+    font-size: 11px
+    font-weight: bold
+    color: #4a4a4a
+    text-transform: uppercase
+    border: 1px solid #eaeaea
+    padding: 15px 12px
+    margin-top: 22px
+    &_quote
+      width: 100px
+    &_coupon
+      width: 118px
+.shipping-box
+  & > form
+    display: flex
+    flex-direction: column
+  &__h
+    font-size: 16px
+    font-weight: bold
+    text-transform: uppercase
+.coupon-box
+  @extend .shipping-box
+  &__h
+    @extend .shipping-box__h
+  &__p
+    margin-top: 28px
+.checkout-section
+  margin-top: 63px
+.checkout-box
+  height: 161px
+  background-color: #f5f3f3
+  text-align: right
+  padding: 40px 42px
+  &__p
+    font-size: 11px
+    color: #4a4a4a
+  &__price
+    margin-left: 10px
+  &__h
+    font-size: 16px
+    font-weight: bold
+    padding-bottom: 22px
+    border-bottom: 1px solid #e2e2e2
+    margin-bottom: 20px
+  &__grand
+    margin-left: 10px
+  &__button
+    font-size: 16px
+    font-weight: bold
+    color: #ffffff
+    background-color: $main-color
+    text-transform: uppercase
+    padding: 18px 42px
+    display: flex
+    text-align: center
+    white-space: nowrap
+
+

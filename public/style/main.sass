@@ -1,0 +1,550 @@
+@import "var"
+@import "mixin"
+*
+  padding: 0
+  margin: 0
+  transition: 0.5s
+.fas
+  margin-right: 0 !important
+html
+  font-size: 14px
+body
+  font-family: 'Lato', sans-serif
+a
+  text-decoration: none
+  color: #222222
+input, details, button, summary
+  outline: none
+input:active
+  outline: none !important
+.error
+  outline: 1px solid red
+  border-color: red
+.hide
+  visibility: hidden
+.absolute
+  display: block
+.center
+  padding: 0 calc(50% - 570px)
+.center-flex
+  +flex-line()
+.mark
+  background-color: inherit
+  color: $main-color
+  font-weight: 900
+.header
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding-top: 25px
+  padding-bottom: 25px
+  &__left
+    +flex-line()
+  &__right
+    +flex-line()
+  &__form
+    +flex-line()
+  &__summary::-webkit-details-marker
+    display: none
+  &__summary::after
+    content: '\25B6'
+    padding-left: 0.5rem
+    color: #838383
+  &__summary_browse
+    width: 87px
+    height: 38px
+    background-color: #e6e6e6
+    border: 1px solid #e6e6e6
+    border-bottom-left-radius: 4px
+    border-top-left-radius: 4px
+    +flex-line()
+  &__summary_account
+    width: 130px
+    height: 38px
+    +flex-line()
+    background-color: $main-color
+    color: white
+    &:after
+      color: cornflowerblue
+  &__search
+    width: 250px
+    height: 36px
+    padding-left: 16px
+    padding-right: 14px
+    border-bottom: 2px solid #e6e6e6
+    border-top: 2px solid #e6e6e6
+    border-right: 1px solid #e6e6e6
+    border-left: 2px solid #e6e6e6
+  &__searchButton
+    background-color: white
+    height: 40px
+    width: 36px
+    border-top: 2px solid #e6e6e6
+    border-bottom: 2px solid #e6e6e6
+    border-right: 2px solid #e6e6e6
+    border-left: 0
+    +flex-line()
+  &__cart
+    padding: 5px
+  &__browse-box
+    display: flex
+    position: relative
+  &__brow:hover .drop
+    display: flex
+  &__cart-box
+    display: flex
+    position: relative
+    &:hover .drop
+      display: flex !important
+.header__summary_browse:hover
+  display: flex
+.cart-text
+  font-size: large
+  text-align: center
+  margin: 15px
+.purchases
+  display: grid
+  grid-template-columns: 1fr 190px 1fr
+  align-items: center
+  text-align: center
+  grid-gap: 15px
+  margin-bottom: 15px
+  &__h
+    text-transform: uppercase
+    font-size: 1.16rem
+    font-weight: bold
+    margin-bottom: 10px
+    white-space: nowrap
+  &__star-box
+    display: flex
+    color: gold
+    margin-bottom: 12px
+  &__quantity-box
+    display: flex
+    color: $main-color()
+  &__total-box
+    display: flex
+    justify-content: space-between
+    padding: 35px 0
+  &__button
+    border: none
+    background-color: white
+.button-checkout
+  text-transform: uppercase
+  font-size: 1rem
+  font-weight: bold
+  background-color: #ffffff
+  border: 1px solid #ffffff
+  display: flex
+  justify-content: center
+  align-items: center
+  margin-bottom: 11px
+.button-href
+  padding: 17px 70px
+  width: max-content
+.total__text
+  text-transform: uppercase
+  font-size: 1.14rem
+  font-weight: bold
+.total__price
+  @extend .total__text
+.quantity
+  margin-right: 3.5px
+.cartHref
+  margin-right: 21px
+.header__details[open] > summary::after
+  content: '\25BC'
+  padding-left: 0.5rem
+  color: #838383
+.header__details_account[open] > summary::after
+  color: white
+.search-form
+  display: flex
+.logo
+  transition: 3s
+  animation: 3s
+  &_header
+    padding-right: 18.5%
+  &_lower
+    padding-right: 18.5%
+  &_href
+    padding-right: 5px
+.brandName
+  font-size: 1.9rem
+  font-weight: 300
+  text-transform: uppercase
+  padding-right: 10%
+  &__href
+    margin-right: 27px
+  &_header
+    +flex-line()
+  &_lower
+    display: flex !important
+.menu
+  margin-bottom: 15px
+  &__ul
+    list-style: none
+    +flex-line()
+  &__list
+    padding: 10px
+    font-weight: bold
+    margin-right: 10px
+    position: relative
+    border-bottom: 1px solid #ffffff
+    &:hover .drop
+      display: flex
+  &__href
+    text-transform: uppercase
+    padding: 25px
+.drop
+  border-radius: 5px
+  background-color: #ffffff
+  border: 1px solid #ececec
+  padding: 12px 20px
+  display: none
+  position: absolute
+  top: 51px
+  left: -5px
+  z-index: 1
+  &:before
+    content: ''
+    width: 14px
+    height: 14px
+    background-color: #ffffff
+    position: absolute
+    transform: rotate(45deg)
+    top: -8px
+    left: 49px
+    border-top: 1px solid #e8e8e8e8
+    border-left: 1px solid #e8e8e8e8
+  &__flex
+    width: 235px
+    margin-right: 46px
+  &__flex:last-of-type
+    margin-right: 0
+  &__ul
+    list-style: none
+  &__h
+    border-bottom: 1px solid #e8e8e8
+    font-size: 1rem
+    letter-spacing: 0.35px
+    color: #232323
+    text-transform: uppercase
+    padding-bottom: 8px
+    padding-top: 8px
+    margin-bottom: 8px
+  &__link
+    font-size: 1rem
+    line-height: 2
+    letter-spacing: 0.35px
+    color: #4f4f4f
+  &__img
+    width: 227px
+    height: 150px
+  &__right
+    right: 0
+    left: auto
+    &:before
+      right: 61px
+      left: auto
+  &__purchases
+    background-color: rgb(232, 232, 232, 0.9)
+    flex-direction: column
+    left: -33px
+.promo
+  background-color: #e8e8e8
+  background-image: url("../images/Layer_24.jpg")
+  background-position: right
+  background-repeat: no-repeat
+  height: 620px
+  display: flex
+  align-items: center
+  &__content
+    border-left: 12px solid $main-color
+  &__h
+    font-size: 4.8rem
+    font-weight: 900
+    line-height: 57px
+    margin-left: 12px
+    margin-bottom: 12px
+  &__description
+    font-size: 3rem
+    line-height: 27px
+    margin-left: 12px
+.promoFor
+  display: grid
+  grid-template-columns: repeat(2, 560px)
+  grid-template-rows: repeat(3, 260px)
+  margin-top: 98px
+  grid-gap: 20px
+  &__slider
+    position: relative
+    background-color: $main-color
+    transition: 0.5s
+    &_big
+      grid-row: span 2
+    &_men
+      background-image: url("../images/forMan.jpg")
+      background-repeat: no-repeat
+      background-size: contain
+    &_women
+      background-image: url("../images/forWomen.jpg")
+      background-repeat: no-repeat
+      background-size: contain
+    &_slider
+      background-image: url("../images/accesories.jpg")
+      background-repeat: no-repeat
+      background-size: contain
+    &_kids
+      background-image: url("../images/forKids.jpg")
+      background-repeat: no-repeat
+      background-size: contain
+    &_accesories
+      background-image: url("../images/accesories.jpg")
+      background-color: #dadad2
+      background-repeat: no-repeat
+      background-position: right
+  &__textBox
+    background-color: #ffffff
+    position: absolute
+    top: 5%
+    text-transform: uppercase
+    padding: 15px 20px 15px 20px
+    transition: 0.4s
+  &__name
+    font-size: 1.5rem
+  &__category
+    font-size: 2.1rem
+.text
+  text-align: center
+  margin-top: 100px
+  margin-bottom: 50px
+  &__h
+    font-size: 2.1rem
+  &__p
+    font-size: 1rem
+    color: #9f9f9f
+.product-box
+  display: grid
+  grid-template-columns: repeat(4, 260px)
+  grid-template-rows: repeat(2, 365px)
+  grid-gap: 30px
+.product
+  position: relative
+  transition: 0.4s
+  &:hover
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.16)
+  &:hover .product__img
+    filter: brightness(50%)
+  &:hover .product__add
+    display: flex !important
+  &__add
+    border: 1px solid #ffffff
+    width: 123px
+    height: 39px
+    display: none
+    justify-content: center
+    align-items: center
+    color: #ffffff
+    font-size: 13px
+    font-weight: 700
+    position: absolute
+    top: 98px
+    left: 70px
+    filter: brightness(50%)
+    background-color: #9f9f9f
+    &:hover
+      box-shadow: 0 0 5px #ffffff
+  &__text
+    padding-top: 20px
+    padding-bottom: 20px
+    padding-left: 15px
+  &__name
+    font-size: 1rem
+    text-transform: uppercase
+  &__price
+    margin-top: 15px
+    color: $main-color
+    font-size: 1.14rem
+.fas
+  margin-right: 8px
+  margin-bottom: 4px
+  &__logo
+    padding-right: 33px
+    font-size: 2.5rem
+.button-box
+  margin-top: 80px
+  display: flex
+  justify-content: center
+  align-items: center
+  &__button
+    padding: 17px 19px 12px 19px
+    border: 1px solid darken($main-color, 5%)
+    background-color: $main-color
+    color: white
+    text-transform: uppercase
+    font-size: 1.14rem
+    transition: 0.5s
+.banner
+  margin-top: 113px
+  display: grid
+  grid-template-columns: repeat(3, 379px)
+  grid-template-rows: repeat(3, 3fr)
+  &__name
+    font-size: 3.8rem
+    color: #ffffff
+  &__p
+    font-size: 2.3rem
+    color: #ffffff
+  &__slider
+    grid-row: span 3
+    grid-column: span 2
+    background-image: url("../images/sale30.jpg")
+    background-repeat: no-repeat
+    filter: brightness(0.9)
+    &__text
+      padding-top: 146px
+      padding-left: 40px
+      text-transform: uppercase
+.benefits
+  background-color: #222224
+  padding-top: 50px
+  padding-left: 36px
+  padding-bottom: 20px
+  &__h
+    font-size: 1.4rem
+    color: #fbfbfb
+  &__text
+    padding-top: 17px
+    font-size: 1rem
+    color: #fbfbfb
+    width: 219px
+    padding-left: 67px
+.lure
+  margin-top: 97px
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  filter: contrast(0.6)
+.feedback
+  background-image: url("../images/subscribe.jpg")
+  background-repeat: no-repeat
+  background-size: cover
+  border-right: 0.5px solid lightgrey
+  display: flex
+  flex-direction: column
+  align-items: center
+  &__text-box
+    display: flex
+    align-items: center
+    padding-top: 120px
+  &__text
+    width: 340px
+    margin-left: 60px
+  &__name
+    text-transform: capitalize
+    font-size: 1.14rem
+  &__city
+    font-size: 0.8rem
+.pagination
+  display: flex
+  padding-bottom: 156px
+  padding-top: 25px
+  &__block
+    background-color: #ffffff
+    width: 36px
+    height: 5px
+    margin-right: 15px
+    &_activ
+      background-color: $main-color
+.subscribe
+  background-image: url("../images/subscribe2.jpg")
+  background-repeat: no-repeat
+  background-size: cover
+  border-left: 0.5px solid lightgrey
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  text-align: center
+  &__text-box
+    padding-bottom: 35px
+  &__h
+    font-size: 1.7rem
+    text-transform: uppercase
+  &__text
+    font-size: 1rem
+    text-transform: uppercase
+    line-height: 1.63
+  &__form
+    position: relative
+  &__email
+    padding: 10px 120px 10px 28px
+    background-color: #e1e1e1
+    border-radius: 23px
+  &__button
+    background-color: $main-color
+    color: #ffffff
+    border-bottom-right-radius: 30px
+    border-top-right-radius: 30px
+    padding: 10px 20px 10px 20px
+    position: absolute
+    left: 232px
+    top: 0
+    transition: 0.5s
+.lower
+  display: grid
+  grid-template-columns: 427px 1fr 1fr 1fr
+  grid-gap: 69px
+  margin-top: 109px
+  padding-bottom: 89px
+  &__h
+    font-size: 1.3rem
+    text-transform: uppercase
+    margin-top: 15px
+  &__ul
+    list-style: none
+    font-size: 1.14rem
+    margin-top: 54px
+  &__li
+    color: #898989
+    text-transform: capitalize
+    margin-top: 26px
+.description
+  &__text
+    color: #898989
+    font-size: 1rem
+    font-weight: 300
+    margin-top: 41px
+    line-height: 1.71
+    &_lower
+      @extend .description__text
+.logo-box
+  display: flex
+  align-items: center
+.footer
+  background-color: #e6e6e6
+  display: flex
+  justify-content: space-between
+  &__left
+    +flex-line
+    padding-top: 25px
+    padding-bottom: 25px
+  &__text
+    font-size: 1.14rem
+    color: #7a7a7a7a
+    line-height: 2.63
+  &__right
+    +flex-line()
+  &__href
+    margin-left: 8px
+  &__media
+    width: 32px
+    height: 32px
+    background-color: #ffffff
+    color: #b2b2b2b2
+    +flex-line()
+@import "_chekout"
+@import "_cart"
+@import "_single"
+@import "_product-list"
+@import "_animation"
