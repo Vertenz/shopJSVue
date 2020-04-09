@@ -1,0 +1,104 @@
+@import "var"
+@import "mixin"
+.bread-crumbs
+  background-color: #f8f3f4
+  display: flex
+  justify-content: space-between
+  align-items: center
+  &__text
+    text-transform: uppercase
+    font-weight: 900
+    font-size: 1.7rem
+    padding: 65px 0
+  &__href
+    text-transform: uppercase
+    color: #636363
+    &_active
+      color: $main-color
+.checkoutPage__summary
+  display: block
+  &::-webkit-details-marker
+    display: none
+.checkoutPage
+  margin-top: 89px
+  &__details
+    border-bottom: 1px solid #e8e8e8
+    &[open]
+      padding-bottom: 79px
+  &__guest
+    margin-right: 291px
+    display: flex
+    flex-direction: column
+  &__flex
+    margin-left: 35px
+    display: flex
+  &__summary
+    font-size: 1.14rem
+    font-weight: bold
+    color: #222222
+    text-transform: uppercase
+    padding-top: 30px
+    padding-bottom: 30px
+  &__h
+    font-size: 1.07rem
+    padding-bottom: 15px
+    text-transform: uppercase
+  &__p
+    font-size: 13px
+    color: #b3b2b2
+    padding-bottom: 34px
+    white-space: nowrap
+  &__form
+    display: flex
+    flex-direction: column
+  &__continue
+    padding: 19px 54px
+    text-transform: uppercase
+    font-weight: bold
+    display: inline-block
+    border: 1px solid #eaeaea
+  &__a-log
+    width: 180px
+    height: 50px
+    border: solid 1px #eaeaea
+    background-color: white
+    +flex-line()
+    text-transform: uppercase
+    color: #4a4a4a
+    font-weight: bold
+  &__forgot
+    line-height: 1.43
+  &__button-box
+    +flex-between()
+.guest
+  font-size: 12px
+  text-transform: uppercase
+  padding-bottom: 20px
+  padding-left: 12px
+  &__box
+    padding-bottom: 20px
+.register
+  @extend .guest
+  &__box
+    @extend .guest__box
+    padding-bottom: 33px
+  &__input
+    width: 376px
+    height: 30px
+    border: solid 1px #eaeaea
+    padding: 14px
+    font-size: 1.5rem
+    margin-bottom: 22px
+  &__fileds
+    color: #ff0d0d
+    padding-bottom: 32px
+.plus
+  padding-bottom: 38px
+  white-space: nowrap
+  &__p
+    font-size: 13px
+    color: #b3b2b2
+    padding-bottom: 15px
+.email__label
+  margin-bottom: 16px
+
